@@ -10,7 +10,7 @@
 
 #### Use case
 
-Four serial continuations; each continuation got 3 parallel callouts; so tatal: 4 * 3 = 12 callouts
+Four serial actions calling continuation; each continuation got 3 parallel callouts; so tatal: 4 * 3 = 12 callouts
 
 ![Demo](./img/continuation-server-example.gif)
 
