@@ -1,0 +1,23 @@
+<apex:page controller="ContinuationController" showChat="false" showHeader="false">
+ 
+   <apex:repeat value="{!serials}" var="s">
+   
+      <apex:form>
+      <!-- Invokes the action method when the user clicks this button. -->
+      <apex:commandButton action="{!startRequest}" 
+              value="Start Request - {!s}" reRender="resultsBlock"/> 
+    </apex:form>
+    
+    <!-- This output text component displays the callout response body. -->
+    <apex:pageBlock id="resultsBlock">
+     <apex:repeat value="{!results}" var="result">
+         <apex:outputText value="{!result}" /> <br/>
+     </apex:repeat>
+    </apex:pageBlock>
+ 
+    
+   </apex:repeat>
+   
+    
+
+</apex:page>
