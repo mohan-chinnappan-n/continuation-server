@@ -23,6 +23,9 @@ Four serial actions calling continuation; each continuation got 3 parallel callo
 
 ![Demo](./img/continuation-server-example.gif)
 
+
+## Simple use 
+
 ### Visutalforce page
 
 ```xml
