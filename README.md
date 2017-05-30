@@ -1,7 +1,7 @@
 ## Sample usage for Salesforce Continuation Server
 
 
-[Reference] (https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_continuation_overview.htm?search_text=continuation%20server)
+[Reference](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_continuation_overview.htm?search_text=continuation%20server)
 
 A user invokes an action on a Visualforce page that requests information from a Web service (step 1).
 
