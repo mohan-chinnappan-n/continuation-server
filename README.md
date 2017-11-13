@@ -43,7 +43,7 @@ Continuation pattern splits the sync pattern into two phases:
 
 First: build up message payload; make callout.
  
- Separate server (Continuation server is used to make web service request). Thread is released after handling over to the Continuation Server. So threads are consumed. We store the transaction info in a serialized form and de-serialize it when we get the response back from the server.
+ Separate server (Continuation server is used to make web service request). Thread is released after handling over to the Continuation Server. So threads are NOT consumed. We store the transaction info in a serialized form and de-serialize it when we get the response back from the server.
  
 Second: examine response; manipulate data; return to the page.
 
