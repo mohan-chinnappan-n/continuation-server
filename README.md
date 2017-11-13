@@ -2,7 +2,7 @@
 ## Callout pattern selection considerations
 
 If you are making a **sync** call to a service, here is the limits:
-Number of synchronous concurrent transactions for long-running transactions that last longer than 5 seconds for each org	10
+Number of synchronous concurrent transactions for long-running transactions that last longer than 5 seconds for each org is	10
 
 This is called 10 by 5, so 11th call in this situation will be denied.
 
