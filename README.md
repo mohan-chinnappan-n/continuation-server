@@ -236,3 +236,6 @@ values in the form<sup class="ph sup">3</sup>
 1. [Execution Governors and Limits] (https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm)
 
 2. [Apex Callouts](https://developer.salesforce.com/blogs/engineering/2014/05/put-apex-sleep-salesforce-asynchronous-callouts.html)
+
+3. [Integration Patterns and
+Practices](https://resources.docs.salesforce.com/sfdc/pdf/integration_patterns_and_practices.pdf)
