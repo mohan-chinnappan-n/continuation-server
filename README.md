@@ -20,7 +20,7 @@ Coding Pattern for Sync callout in VF action:
 
 Reason for this is:
 
-Sync calls are on put  separate threads: Each pod has large number of threads for this purpose. A large number, but a finite number. Because of this finite pool of threads, we have to be sure that there are always some available for the next request that shows up.
+Sync calls are  put separate threads: Each pod has large number of threads for this purpose. A large number, but a finite number. Because of this finite pool of threads, we have to be sure that there are always some available for the next request that shows up.
 
 
 #### What I do if the call-out takes more than 5 sec in average?
