@@ -64,10 +64,11 @@ Now with this Continuation pattern (call and callback pattern),  the action func
 
 Overhead involved is Continuation Object and call and callback pattern wiring
 
+------
 
 #### Can you provide an example of this pattern?
 
-##### Sample usage for Salesforce Continuation Server
+#### Sample usage for Salesforce Continuation Server
 
 
 [Reference](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_continuation_overview.htm?search_text=continuation%20server)
