@@ -26,7 +26,7 @@ Sync calls are  put separate threads: Each pod has large number of threads for t
 #### What I do if the call-out takes more than 5 sec in average?
 
 If the average call-out turnaround is more than 5 sec, go async.
-In async route, Salesforce uses queuing to protect our resources.
+In async route, Salesforce uses queuing to protect the resources.
 
 
 #### If I have users waiting on the Visualforce page when we make call-out, what you have for this?
