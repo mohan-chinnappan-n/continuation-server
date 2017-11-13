@@ -1,4 +1,73 @@
-## Sample usage for Salesforce Continuation Server
+
+# Callout pattern selection considerations
+
+If you are making the **sync** call to a service, here is the limits:
+Number of synchronous concurrent transactions for long-running transactions that last longer than 5 seconds for each org	10
+
+This is called 10 by 5, so 11th call in this situation will be denied.
+
+If an org has more than **ten** transactions in flight that have been going for **five** seconds, that org is blocked from running any further Apex transaction.
+
+
+Coding Pattern for Sync callout in VF action:
+
+ - build up message payload
+ - make callout  ( here thread starts running and waiting - doing nothing... until you get the response from the service)
+ - examine response
+ - manipulate data
+ - return to the page
+
+
+Reason for this is:
+
+Sync calls are on put  separate threads: Each pod has large number of threads for this purpose. A large number, but a finite number. Because of this finite pool of threads, we have to be sure that there are always some available for the next request that shows up.
+
+
+#### What I do if the call-out takes more than 5 sec in average?
+
+If the average call-out turnaround is more than 5 sec, go async.
+In async route, Salesforce use queuing to protect our resources.
+
+
+#### If I have users waiting on the Visualforce page when we make call-out, what you have for this?
+
+If you need run long-running process but the user is waiting on the VisualForce, go Continuation server route.
+
+#### What is Continuation server route?
+
+Continuation object holds the callout request information and the response from your callout. 
+
+#### What is differnce between and  Continuation server route and Sync callouts?
+
+Continuation pattern splits the sync pattern into two phases:
+
+First: build up message payload; make callout.
+ 
+ Separate server (Continuation server is used to make web service request). Thread is released after handling over to the Continuation Server. So threads are consumed. We store the transaction info in a serialized form and de-serialize it when we get the response back from the server.
+ 
+Second: examine response; manipulate data; return to the page.
+
+When we create Continuation object we put:
+
+ - info about the call request
+ - name of the method to be called (callback) when got the response
+
+#### What the modifications done to action pattern?
+
+To support this Continuation pattern, we have modified our action function pattern to handle call and callback pattern.
+
+Every action function had to return a **PageReference**, which is directed back to the page.
+
+Now with this Continuation pattern (call and callback pattern),  the action function can return a **Continuation object**, to indicate that is not-yet-ready to return to the page yet. The callback method can return a **PageReference** after handling the response from the service
+
+#### Looks great! but what is the overhead?
+
+Overhead involved is Continuation Object and call and callback pattern wiring
+
+
+#### Can you provide an example of this pattern?
+
+##### Sample usage for Salesforce Continuation Server
 
 
 [Reference](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_continuation_overview.htm?search_text=continuation%20server)
