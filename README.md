@@ -240,5 +240,5 @@ values in the form<sup class="ph sup">3</sup>
 3. [Integration Patterns and
 Practices](https://resources.docs.salesforce.com/sfdc/pdf/integration_patterns_and_practices.pdf)
 
-4. [(Make Long-Running Callouts with Continuations](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/apex_continuations.htm)
+4. [Make Long-Running Callouts with Continuations](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/apex_continuations.htm)
 
